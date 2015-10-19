@@ -1,11 +1,12 @@
 # Makefile for Poolball demo
 
-#if _Win32
+ifeq ($(OS),Windows_NT)
     EXE = .exe
-	DEL = del
-#else
+    DEL = del
+else
     EXE =
-	DEL = rm -f
+    DEL = rm -f
+endif
 
 FILES   = main.cpp Poolball.cpp Pooltable.cpp
 OBJS    = $(FILES:.cpp=.o)
